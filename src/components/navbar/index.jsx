@@ -1,17 +1,18 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { GlobalContext } from "../../context";
-
+import search from "../images/search.png"
 export default function Navbar() {
   const { searchParam, setSearchParam , handleSubmit } = useContext(GlobalContext);
 
   console.log(searchParam);
 
   return (
-    <nav className="flex justify-between items-center py-8 container mx-auto flex-col lg:flex-row gap-5 lg:gap-0">
-      <h2 className="text-2xl font-semibold">
-        <NavLink to={"/"}>FoodRecipe</NavLink>
-      </h2>
+    <nav className="flex justify-between   container ">
+      <h1 className="text-2xl text-amber-950 mt-0 font-bold">
+        <NavLink to={"/"}>foodOpedia</NavLink>
+      </h1>
+      
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -19,14 +20,15 @@ export default function Navbar() {
           value={searchParam}
           onChange={(event) => setSearchParam(event.target.value)}
           placeholder="Enter Items..."
-          className="bg-white/75 p-3 px-8 rounded-full outline-none lg:w-96 shadow-lg shadow-red-100 focus:shadow-red-200"
+          className="bg-amber-100 mt-7 p-3 px-8 rounded-full outline-none lg:w-96 shadow-lg shadow-orange-600 focus:shadow-amber-200"
         />
+         
       </form>
       <ul className="flex gap-5">
         <li>
           <NavLink
             to={"/"}
-            className="text-black hover:text-gray-700 duration-300"
+            className="text-black hover:text-blue-700 hover:underline duration-300"
           >
             Home
           </NavLink>
@@ -34,9 +36,9 @@ export default function Navbar() {
         <li>
           <NavLink
             to={"/favorites"}
-            className="text-black hover:text-gray-700 duration-300"
+            className="text-black hover:text-blue-700 hover:underline duration-300"
           >
-            favorites
+            Favorites
           </NavLink>
         </li>
       </ul>

@@ -12,9 +12,9 @@ export default function Home() {
       {recipeList && recipeList.length > 0 ? (
         recipeList.map((item) => <RecipeItem item={item} />)
       ) : (
-        <div>
+        <div className="mt-40">
           <p className="lg:text-4xl text-xl text-center text-black font-extrabold">
-            Nothing to show. Please search something
+            Nothing to show. Please search something...
           </p>
         </div>
       )}
